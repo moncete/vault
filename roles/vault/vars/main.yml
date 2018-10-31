@@ -1,4 +1,4 @@
-vault: "{{ lookup('hashi_vault', 'secret=mon/db token=3ucFeGZ8rB5GXIYXnqnAgepC url=http://integra.mon.es')}}"
+vault: "{{ lookup('hashi_vault', 'secret=mon/db token=3ucFeGZ8rB5GXIYXnqnAgepC url=http://integra.mon.es:8002')}}"
 user: {{ vault.username }}
 password: {{ vault.passwd }}
 hosts: {{ vault.host }}
