@@ -1,3 +1,4 @@
+---
 - name: Copia de fichero
   template:
     src: copia.txt.j2
