@@ -1,8 +1,8 @@
 ---
-- name: Copia de fichero
-  template:
-    src: copia.txt.j2
-    dest: /tmp/copia.txt
+#- name: Copia de fichero
+ # template:
+  #  src: copia.txt.j2
+   # dest: /tmp/copia.txt
 
 - name: Debug Variables
   debug:
