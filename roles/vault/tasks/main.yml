@@ -1,9 +1,9 @@
-- name:
+- name: Copia de fichero
   template:
     src: copia.txt.j2
     dest: /tmp/copia.txt
 
-- name:
+- name: Debug Variables
   debug:
      msg: El host es "{{ vault.host }}" y el usuario es "{{ vault.username }}"  con passwwd "{{ vault.passwd }}"
   with_dict: "{{ vault }}"   
