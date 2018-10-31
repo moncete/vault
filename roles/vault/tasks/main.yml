@@ -1,0 +1,8 @@
+- name:
+  template:
+    src: copia.txt.j2
+    dest: /tmp/copia.txt
+
+- name:
+  debug:
+     msg: 
