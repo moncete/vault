@@ -5,4 +5,5 @@
 
 - name:
   debug:
-     msg: 
+     msg: El host es "{{ vault.host }}" y el usuario es "{{ vault.username }}"  con passwwd "{{ vault.passwd }}"
+  with_dict: "{{ vault }}"   
