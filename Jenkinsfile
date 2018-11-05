@@ -1,7 +1,7 @@
 stage "Check syntax"
 
 node {
-    wrap(['AnsiColorBuildWrapper', colorMapName: "xterm"]){
+    wrap([$class: 'AnsiColorBuildWrapper', colorMapName: "xterm"]){
         ansiblePlaybook(
             laybook: 'vault.yml',
             //inventory: 'inventory.ini',
