@@ -1,8 +1,8 @@
 stage "Check syntax"
 
 node {
-    label 'some-label'
-    customWorkspace '/tmp'
+    //label 'some-label'
+    //customWorkspace '/tmp'
     ansiColor('xterm') {
         ansiblePlaybook(
             playbook: '/execute/git/vault.yml',
