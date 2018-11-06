@@ -1,9 +1,9 @@
 stage "Check syntax"
 
 node {
+    label 'some-label'
+    customWorkspace '/tmp'
     ansiColor('xterm') {
-        label 'some-label'
-        customWorkspace '/tmp'
         ansiblePlaybook(
             playbook: '/execute/git/vault.yml',
             extras: '--syntax-check',
