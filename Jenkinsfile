@@ -1,7 +1,7 @@
 stage "Check syntax"
 
 node {
-    ws ('/tmp') {
+    dir ('/tmp') {
         ansiColor('xterm') {
             ansiblePlaybook(
                 playbook: '/execute/git/vault.yml',
