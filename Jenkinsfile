@@ -1,6 +1,6 @@
 stage "Check syntax"
 
-node {
+
     
         ansiColor('xterm') {
             ws ('/tmp/') {
@@ -11,4 +11,3 @@ node {
             )
             }
         }
-}
