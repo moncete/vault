@@ -7,7 +7,7 @@ node {
                 playbook: '/execute/git/vault.yml',
                 extras: '--syntax-check',
                 credentialsId: 'f702de34-19dc-4840-a8d1-2f7e1857f4d4',
-                sudo: true,
+                become: true,
                 sudoUser: 'jenkins',
                 colorized: true
             )
@@ -24,7 +24,7 @@ node{
             playbook: '/execute/git/vault.yml',
             credentialsId: 'f702de34-19dc-4840-a8d1-2f7e1857f4d4',
             extras: '--check --diff',
-            sudo: true,
+            become: true,
             sudoUser: 'jenkins',
             colorized: true
         )
