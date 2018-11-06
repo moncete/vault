@@ -1,7 +1,7 @@
 stage "Check syntax"
 
 node {
-    deletedir()
+    deleteDir()
     checkout scm
     ws ('/tmp/') {
         ansiColor('xterm') {
