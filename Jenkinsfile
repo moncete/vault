@@ -6,7 +6,7 @@ node {
             ansiblePlaybook(
                 playbook: '/execute/git/vault.yml',
                 extras: '--syntax-check',
-                credentialsId: 'private_key',
+                credentialsId: 'f702de34-19dc-4840-a8d1-2f7e1857f4d4',
                 colorized: true
             )
         }
@@ -20,7 +20,7 @@ node{
     ansiColor('xterm') {
         ansiblePlaybook(
             playbook: '/execute/git/vault.yml'
-            credentialsId: 'private_key'
+            credentialsId: 'f702de34-19dc-4840-a8d1-2f7e1857f4d4'
             extras: '--check --diff'
             colorized: true
         )
