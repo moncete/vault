@@ -24,4 +24,5 @@ node{
             extras: '--check --diff',
             colorized: true
         )
+    }
 }
