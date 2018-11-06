@@ -3,7 +3,6 @@ pipeline{
     stages{
         stage('Check syntax'){
             steps{
-                dir('/tmp') {
                     ansiColor('xterm') {
                         ansiblePlaybook(
                             playbook: '/execute/git/vault.yml',
@@ -14,7 +13,6 @@ pipeline{
                             colorized: true
                         )
                     }
-                }
             }
         }
     }
