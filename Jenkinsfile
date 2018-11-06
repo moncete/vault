@@ -1,9 +1,11 @@
 stage "Check syntax"
 
 node {
-    ansiblePlaybook(
-        playbook: 'vault.yml',
-        extras: '--syntax-check',
-        colorized: true
-    )
+    ansiColor('xterm') {
+        ansiblePlaybook(
+            playbook: '/execute/git/vault.yml',
+            extras: '--syntax-check',
+            colorized: true
+        )
+    }   
 }
