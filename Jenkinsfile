@@ -3,7 +3,7 @@ pipeline{
     stages{
         stage('Check syntax'){
             steps{
-                node 
+                 
                     ansiColor('xterm') {
                         ansiblePlaybook(
                             playbook: '/execute/git/vault.yml',
