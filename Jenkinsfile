@@ -20,7 +20,8 @@ pipeline {
 
         stage('Run Playbook') {
             steps {
-                echo env.BRANCH_NAME
+                ent = env,BRANCH_NAME
+                echo "Trabajando en el entorno de ${ent}"
                 ansiColor('xterm') {
                     ansiblePlaybook (
                         playbook:  '/execute/git/vault.yml',
