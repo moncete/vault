@@ -27,7 +27,7 @@ pipeline {
                     ansiblePlaybook (
                         playbook:  '/execute/git/vault.yml',
                         credentialsId: 'f702de34-19dc-4840-a8d1-2f7e1857f4d4',
-                        extraVars: ' "ENV: ${ent}" '
+                        extraVars: ' "ENV: ${ent}" ',
                         //extras: ' --extra-vars: ENV= ${ent} ',
                         become: true,
                         becomeUser: 'jenkins',
