@@ -1,8 +1,8 @@
 ---
 - name: Copia de fichero
   template:
-    src: copia_{{ ENV }}.txt.j2
-    dest: /tmp/copia.txt
+    src: copia.txt.j2
+    dest: /tmp/copia_{{ ENV }}.txt
 
 - name: Debug Variables
   debug:
