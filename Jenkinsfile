@@ -1,4 +1,4 @@
-def ent = env.BRANCH_NAME
+def ent = env.BRANCH_NAME //Variable para elegir el entorno de ejecucion
 
 pipeline {
     
@@ -27,6 +27,7 @@ pipeline {
                     ansiblePlaybook (
                         playbook:  '/execute/git/vault.yml',
                         credentialsId: 'f702de34-19dc-4840-a8d1-2f7e1857f4d4',
+                        extras: ' --extra-vars: ENV: ${ent} '
                         sudo: true,
                         sudoUser: 'jenkins',
                         colorized: true
