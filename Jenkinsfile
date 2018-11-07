@@ -9,7 +9,7 @@ pipeline {
             steps {
                 ansiColor('xterm') {
                     ansiblePlaybook (
-                        playbook: '/execute/git/vault.yml',
+                        playbook: 'vault.yml',
                         extras: '--syntax-check',
                         credentialsId: 'f702de34-19dc-4840-a8d1-2f7e1857f4d4',
                         sudo: true,
@@ -25,7 +25,7 @@ pipeline {
                 echo "Trabajando en el entorno de ${ent}"
                 ansiColor('xterm') {
                     ansiblePlaybook (
-                        playbook:  '/execute/git/vault.yml',
+                        playbook:  'vault.yml',
                         credentialsId: 'f702de34-19dc-4840-a8d1-2f7e1857f4d4',
                         extraVars: [ ENV: "${ent}" ],
                         //extras: ' --extra-vars: ENV= "${ent}"" ',
