@@ -1,5 +1,7 @@
 pipeline {
+    
     agent any
+
     stages {
         stage('Check syntax') {
             steps {
@@ -15,9 +17,10 @@ pipeline {
                 }
             }
         }
-        
+
         stage('Run Playbook') {
             steps {
+                echo env.BRANCH_NAME
                 ansiColor('xterm') {
                     ansiblePlaybook (
                         playbook:  '/execute/git/vault.yml',
