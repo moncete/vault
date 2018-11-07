@@ -1,3 +1,5 @@
+def ent = env.BRANCH_NAME
+
 pipeline {
     
     agent any
@@ -20,7 +22,6 @@ pipeline {
 
         stage('Run Playbook') {
             steps {
-                ent = env.BRANCH_NAME
                 echo "Trabajando en el entorno de ${ent}"
                 ansiColor('xterm') {
                     ansiblePlaybook (
