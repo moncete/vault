@@ -38,6 +38,16 @@ pipeline {
             }
         }
     }
+
+    post {
+        success {
+            emailtext (
+                to: 'jose-ramon.rodriguez@ext.leroymerlin.es',
+                subject: "Ejecucion en ${ent} exitosa",
+                body: "EXECUCION EXITOSA"
+            )
+        }
+    }
 }        
 
 
