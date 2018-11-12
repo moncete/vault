@@ -28,7 +28,6 @@ pipeline {
                         playbook:  'vault.yml',
                         credentialsId: 'f702de34-19dc-4840-a8d1-2f7e1857f4d4',
                         extraVars: [ ENV: "${ent}" ],
-                        //extras: ' --extra-vars: ENV= "${ent}"" ',
                         become: true,
                         becomeUser: 'jenkins',
                         colorized: true
@@ -41,9 +40,9 @@ pipeline {
 
     post {
         success {
-            emailtext (
+            emailext (
                 to: 'jose-ramon.rodriguez@ext.leroymerlin.es',
-                subject: "Ejecucion en ${ent} exitosa",
+                subject: "Ejecucion en '${ent}' exitosa",
                 body: "EXECUCION EXITOSA"
             )
         }
