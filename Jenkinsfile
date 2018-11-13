@@ -41,6 +41,7 @@ pipeline {
     post {
         success {
             emailext (
+                from: 'test@leroymerlin.es',
                 to: 'jose-ramon.rodriguez@ext.leroymerlin.es',
                 subject: "Ejecucion en '${ent}' exitosa",
                 body: "EXECUCION EXITOSA"
