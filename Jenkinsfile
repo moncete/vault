@@ -43,7 +43,7 @@ pipeline {
             emailext (
                 from: 'test@leroymerlin.es',
                 to: 'jose-ramon.rodriguez@ext.leroymerlin.es',
-                subject: "Ejecucion en ${ent} '${env_JOB_NAME} [${env.BUILD_NUMBER}]'",
+                subject: "Ejecucion en ${ent} '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
                 body: "EXECUCION EXITOSA"
             )
         }
