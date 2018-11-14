@@ -2,7 +2,7 @@ def ent = env.BRANCH_NAME //Variable para elegir el entorno de ejecucion
 
 pipeline {
     
-    agent { label 'ansible'}
+    agent { label 'Ansible'}
 
     stages {
         stage('Check syntax') {
