@@ -2,7 +2,7 @@ def ent = env.BRANCH_NAME //Variable para elegir el entorno de ejecucion
 
 pipeline {
     
-    agent { label 'Ansible' }
+    agent any
 
     stages {
         stage('Check syntax') {
@@ -40,9 +40,9 @@ pipeline {
 
     post {
         always {
-            junit '**/reports/junit/*.xml'
+            junit: '**/reports/junit/*.xml'
         }
-        
+
         success {
             emailext (
                 from: 'test@leroymerlin.es',
