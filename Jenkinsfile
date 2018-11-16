@@ -40,7 +40,7 @@ pipeline {
 
     post {
         always {
-            junit: '**/reports/junit/*.xml'
+            junit '**/reports/junit/*.xml'
         }
 
         success {
