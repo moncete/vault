@@ -39,20 +39,29 @@ pipeline {
     }
 
     post {
-        always {
-            junit '**/reports/junit/*.xml'
-        }
-
         success {
             emailext (
                 from: 'test@leroymerlin.es',
                 to: 'jose-ramon.rodriguez@ext.leroymerlin.es',
                 subject: "Ejecucion en ${ent} '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
+                attachLog: true,
                 body: """<p>STARTED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]':</p>
               <p>Check console output at &QUOT;<a href='${env.BUILD_URL}'>${env.JOB_NAME} [${env.BUILD_NUMBER}]</a>&QUOT;</p>"""
             )
         }
+        failure {
+            emailext (
+                from: 'test@leroymerlin.es',
+                to: 'jose-ramon.rodriguez@ext.leroymerlin.es',
+                subject: "Ejecucion en ${ent} '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
+                attachLog: true,
+                body: """<p>FAIL: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]':</p>
+              <p>Check console output at &QUOT;<a href='${env.BUILD_URL}'>${env.JOB_NAME} [${env.BUILD_NUMBER}]</a>&QUOT;</p>"""
+
+        }
     }
 }        
+
+
 
 
