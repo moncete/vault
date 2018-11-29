@@ -30,7 +30,7 @@ pipeline {
                         credentialsId: 'f702de34-19dc-4840-a8d1-2f7e1857f4d4',
                         extraVars: [ ENV: "${ent}" ],
                         become: true,
-                        becomeUser: 'root',
+                        becomeUser: 'jenkins',
                         colorized: true
                     )
                 }
