@@ -2,8 +2,8 @@ def ent = env.BRANCH_NAME //Variable para elegir el entorno de ejecucion
 
 pipeline {
     
-    //agent { label 'DocAnsi' }
-    agent any
+    agent { label 'DocAnsi' }
+    //agent any
 
     stages {
         stage('Check syntax') {
