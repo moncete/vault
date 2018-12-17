@@ -22,7 +22,7 @@ pipeline {
             }
         }
 
-        stage('Run Playbook') {
+        stage('Copy File') {
             steps {
                 echo "Trabajando en el entorno de ${ent}"
                 ansiColor('xterm') {
