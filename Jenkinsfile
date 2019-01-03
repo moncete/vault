@@ -43,6 +43,9 @@ pipeline {
     }
 
     post {
+        always {
+            junit 'build/reports/**/*.xml'
+        }
         success {
             emailext (
                 from: 'test@leroymerlin.es',
