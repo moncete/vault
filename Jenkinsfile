@@ -2,8 +2,8 @@ def ent = env.BRANCH_NAME //Variable para elegir el entorno de ejecucion
 
 pipeline {
     
-    agent { label 'DocAnsi' }
-    //agent any
+    //agent { label 'DocAnsi' }
+    agent any
 
     stages {
         stage('Check syntax') {
@@ -43,9 +43,11 @@ pipeline {
     }
 
     post {
+
         always {
-            junit 'build/reports/**/*.xml'
+            junit '/tmp/ansible.xml'
         }
+
         success {
             emailext (
                 from: 'test@leroymerlin.es',
@@ -56,6 +58,7 @@ pipeline {
               <p>Check console output at &QUOT;<a href='${env.BUILD_URL}'>${env.JOB_NAME} [${env.BUILD_NUMBER}]</a>&QUOT;</p>"""
             )
         }
+        
         failure {
             emailext (
                 from: 'test@leroymerlin.es',
