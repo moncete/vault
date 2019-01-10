@@ -5,6 +5,11 @@ pipeline {
     //agent { label 'DocAnsi' }
     agent any
 
+    environment {
+        JUNIT_OUTPUT_DIR = '/tmp'
+    }
+
+
     stages {
         stage('Check syntax') {
             steps {
@@ -45,7 +50,7 @@ pipeline {
     post {
 
         always {
-            junit '/tmp/ansible.xml'
+            junit '/tmp/*.xml'
         }
 
         success {
