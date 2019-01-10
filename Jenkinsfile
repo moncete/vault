@@ -6,7 +6,7 @@ pipeline {
     agent any
 
     environment {
-        JUNIT_OUTPUT_DIR = '.'
+        JUNIT_OUTPUT_DIR = './test/report.xml'
     }
 
 
@@ -50,7 +50,7 @@ pipeline {
     post {
 
         always {
-            junit './*.xml'
+            junit 'test/report.xml'
         }
 
         success {
