@@ -2,8 +2,8 @@ def ent = env.BRANCH_NAME //Variable para elegir el entorno de ejecucion
 
 pipeline {
     
-    agent { label 'DocAnsi' }
-    //agent any
+    //agent { label 'DocAnsi' }
+    agent none
 
     environment {
         JUNIT_OUTPUT_DIR = './test'
@@ -11,7 +11,20 @@ pipeline {
 
 
     stages {
+
+        stage('Test Molecule'){
+
+            agent {label 'Molecule'}
+            
+            steps {
+                sh '''
+                molecule test
+                '''                
+            }
+        }
+
         stage('Check syntax') {
+            agent { label 'DocAnsi' }
             steps {
                 ansiColor('xterm') {
                     ansiblePlaybook (
@@ -28,6 +41,7 @@ pipeline {
         }
 
         stage('Copy File') {
+            agent { label 'DocAnsi' }
             steps {
                 echo "Trabajando en el entorno de ${ent}"
                 ansiColor('xterm') {
