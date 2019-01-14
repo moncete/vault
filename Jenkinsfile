@@ -14,7 +14,7 @@ pipeline {
 
         stage('Test Molecule'){
 
-            agent {label 'Molecule'}
+            agent { label 'Molecule' }
             
             steps {
                 sh '''
@@ -24,8 +24,11 @@ pipeline {
         }
 
         stage('Check syntax') {
+
             agent { label 'DocAnsi' }
+            
             steps {
+                checkout scm
                 ansiColor('xterm') {
                     ansiblePlaybook (
                         playbook: 'vault.yml',
@@ -41,8 +44,11 @@ pipeline {
         }
 
         stage('Copy File') {
+
             agent { label 'DocAnsi' }
+
             steps {
+                checkout scm
                 echo "Trabajando en el entorno de ${ent}"
                 ansiColor('xterm') {
                     ansiblePlaybook (
