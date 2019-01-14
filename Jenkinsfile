@@ -48,7 +48,7 @@ pipeline {
             agent { label 'DocAnsi' }
 
             steps {
-                checkout scm
+                //checkout scm
                 echo "Trabajando en el entorno de ${ent}"
                 ansiColor('xterm') {
                     ansiblePlaybook (
