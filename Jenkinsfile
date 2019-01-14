@@ -15,6 +15,10 @@ pipeline {
         stage('Test Molecule'){
 
             agent { label 'Molecule' }
+
+            environment {
+                JUNIT_OUTPUT_DIR = './test'
+            }
             
             steps {
                 sh '''
@@ -32,6 +36,10 @@ pipeline {
         stage('Check syntax') {
 
             agent { label 'DocAnsi' }
+            environment {
+                JUNIT_OUTPUT_DIR = './test'
+            }
+            
             
             steps {
                 checkout scm
@@ -57,6 +65,9 @@ pipeline {
         stage('Copy File') {
 
             agent { label 'DocAnsi' }
+            environment {
+                JUNIT_OUTPUT_DIR = './test'
+            }           
 
             steps {
                 //checkout scm
