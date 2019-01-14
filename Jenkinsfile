@@ -22,6 +22,11 @@ pipeline {
                 ansible --version
                 '''                
             }
+            post {
+                always{
+                    junit 'test/*.xml'
+                }
+            }
         }
 
         stage('Check syntax') {
@@ -42,9 +47,14 @@ pipeline {
                     )
                 }
             }
+            post{
+                always{
+                    junit 'test/*.xml'
+                }
+            }
         }
 
-        /*stage('Copy File') {
+        stage('Copy File') {
 
             agent { label 'DocAnsi' }
 
@@ -65,14 +75,19 @@ pipeline {
                 }
 
             }
-        }*/
+            post {
+                always{
+                    junit 'test/*.xml'
+                }
+            }
+        }
     }
 
     post {
 
-        always {
+        /*always {
             junit 'test/*.xml'
-        }
+        }*/
 
         success {
             emailext (
