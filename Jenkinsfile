@@ -19,8 +19,6 @@ pipeline {
             steps {
                 sh '''
                 ls -l
-                #source virtenv/bin/activate
-                #molecule test
                 '''                
             }
         }
