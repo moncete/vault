@@ -19,6 +19,7 @@ pipeline {
             steps {
                 sh '''
                 ls -l
+                ansible --version
                 '''                
             }
         }
@@ -43,7 +44,7 @@ pipeline {
             }
         }
 
-        stage('Copy File') {
+        /*stage('Copy File') {
 
             agent { label 'DocAnsi' }
 
@@ -64,7 +65,7 @@ pipeline {
                 }
 
             }
-        }
+        }*/
     }
 
     post {
