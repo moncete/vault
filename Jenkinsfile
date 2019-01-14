@@ -58,7 +58,7 @@ pipeline {
                         disableHostKeyChecking: true,
                         extraVars: [ ENV: "${ent}" ],
                         become: true,
-                        becomeUser: 'jenkins',
+                        becomeUser: 'root',
                         colorized: true
                     )
                 }
