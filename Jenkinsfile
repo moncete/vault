@@ -69,9 +69,9 @@ pipeline {
 
     post {
 
-        //always {
-        //    junit 'test/*.xml'
-        //}
+        always {
+            junit 'test/*.xml'
+        }
 
         success {
             emailext (
