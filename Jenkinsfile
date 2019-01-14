@@ -22,11 +22,11 @@ pipeline {
                 ansible --version
                 '''                
             }
-            post {
+            /*post {
                 always{
                     junit 'test/*.xml'
                 }
-            }
+            }*/
         }
 
         stage('Check syntax') {
