@@ -57,6 +57,9 @@ pipeline {
                         colorized: true
                     )
                 }
+                sh '''
+                 ls -l test/
+                '''
             }
             post{
                 always{
