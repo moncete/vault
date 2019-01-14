@@ -43,6 +43,9 @@ pipeline {
             
             steps {
                 checkout scm
+                sh '''
+                 mkdir test
+                '''
                 ansiColor('xterm') {
                     ansiblePlaybook (
                         playbook: 'vault.yml',
@@ -71,6 +74,9 @@ pipeline {
 
             steps {
                 //checkout scm
+                sh '''
+                 mkdir test
+                '''
                 echo "Trabajando en el entorno de ${ent}"
                 ansiColor('xterm') {
                     ansiblePlaybook (
