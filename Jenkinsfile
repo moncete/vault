@@ -36,15 +36,10 @@ pipeline {
         stage('Check syntax') {
 
             agent { label 'DocAnsi' }
-            environment {
+            /*environment {
                 JUNIT_OUTPUT_DIR = './test'
-            }
-            
-            
+            }*/
             steps {
-                environment {
-                    JUNIT_OUTPUT_DIR = './test'
-                }
                 checkout scm
                 sh '''
                  mkdir test
