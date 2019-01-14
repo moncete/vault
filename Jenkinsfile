@@ -58,6 +58,7 @@ pipeline {
                     )
                 }
                 sh '''
+                 ls -l
                  ls -l test/
                 '''
             }
