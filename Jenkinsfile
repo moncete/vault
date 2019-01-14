@@ -60,11 +60,11 @@ pipeline {
                  ls -l test/
                 '''
             }
-            post{
+            /*post{
                 always{
                     junit 'test/*.xml'
                 }
-            }
+            }*/
         }
 
         stage('Copy File') {
