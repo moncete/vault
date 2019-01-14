@@ -42,6 +42,9 @@ pipeline {
             
             
             steps {
+                environment {
+                    JUNIT_OUTPUT_DIR = './test'
+                }
                 checkout scm
                 sh '''
                  mkdir test
