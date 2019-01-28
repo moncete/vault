@@ -26,24 +26,13 @@ pipeline {
                 ansible --version
                 '''                
             }
-            /*post {
-                always{
-                    junit 'test/*.xml'
-                }
-            }*/
         }
 
         stage('Check syntax') {
 
             agent { label 'DocAnsi' }
-            /*environment {
-                JUNIT_OUTPUT_DIR = './test'
-            }*/
+
             steps {
-                //checkout scm
-                sh '''
-                 mkdir test
-                '''
                 ansiColor('xterm') {
                     ansiblePlaybook (
                         playbook: 'vault.yml',
@@ -55,17 +44,7 @@ pipeline {
                         colorized: true
                     )
                 }
-                sh '''
-                 ls -l
-                 ls -l test/
-                '''
             }
-            /*post{
-                always{
-                    junit 'test/*.xml'
-                }
-            }*/
-        }
 
         stage('Copy File') {
 
@@ -75,7 +54,6 @@ pipeline {
             }           
 
             steps {
-                //checkout scm
                 sh '''
                  mkdir test
                 '''
@@ -103,11 +81,6 @@ pipeline {
     }
 
     post {
-
-        /*always {
-            junit 'test/*.xml'
-        }*/
-
         success {
             emailext (
                 from: 'test@leroymerlin.es',
